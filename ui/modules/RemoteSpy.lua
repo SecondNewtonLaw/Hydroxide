@@ -330,7 +330,7 @@ function Log.new(remote)
 		checkCurrentBlocked()
 		checkCurrentIgnored()
 
-		LogsRemote.Icon.Image = icons[remoteClassName]
+		LogsRemote.Icon.Image = icons[remoteClassName] or "rbxassetid://4229806545"
 		LogsRemote.Label.Text = remoteInstanceName
 		LogsRemote.Label.Size = UDim2.new(0, nameLength, 0, 20)
 		LogsRemote.Position = UDim2.new(1, -nameLength, 0, 0)
