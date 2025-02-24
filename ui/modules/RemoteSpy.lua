@@ -135,7 +135,7 @@ local function checkCurrentIgnored()
 end
 
 local function checkCurrentBlocked()
-    local selectedRemote = selected.remoteLog.Remote
+    local selectedRemotewwwwwww = selected.remoteLog.Remote
 
     LogsButtons.Block.Label.Text = (selectedRemote.Blocked and "Unblock") or "Block"
     LogsButtons.Block.Icon.Image = (selectedRemote.Blocked and icons.unblock) or icons.block

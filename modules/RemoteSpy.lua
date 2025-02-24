@@ -22,6 +22,7 @@ local remoteMethods = {
 }
 
 local remotesViewing = {
+	UnreliableRemoteEvent = true,
 	RemoteEvent = true,
 	RemoteFunction = false,
 	BindableEvent = false,
@@ -65,14 +66,7 @@ nmcTrampoline = hookMetaMethod(game, "__namecall", function(...)
 		method = "InvokeServer"
 	end
 
-	if
-		(
-			remotesViewing[instance.ClassName]
-			or (instance.ClassName == "UnreliableRemoteEvent" and remotesViewing["RemoteEvent"])
-		)
-		and instance ~= remoteDataEvent
-		and remoteMethods[method]
-	then
+	if remotesViewing[instance.ClassName] and instance ~= remoteDataEvent and remoteMethods[method] then
 		local remote = currentRemotes[instance]
 		local vargs = { select(2, ...) }
 
@@ -132,11 +126,7 @@ for _name, hook in pairs(methodHooks) do
 				end
 			end
 
-			if
-				instance.ClassName == _name
-				and (remotesViewing[instance.ClassName] or (instance.ClassName == "UnreliableRemoteEvent" and remotesViewing["RemoteEvent"]))
-				and instance ~= remoteDataEvent
-			then
+			if instance.ClassName == _name and remotesViewing[instance.ClassName] and instance ~= remoteDataEvent then
 				local remote = currentRemotes[instance]
 				local vargs = { select(2, ...) }
 
