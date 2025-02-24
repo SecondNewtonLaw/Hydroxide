@@ -60,6 +60,7 @@ local icons = {
     unblock = "rbxassetid://4891642508",
     ignore = "rbxassetid://4842578510",
     unignore = "rbxassetid://4842578818",
+    UnreliableRemoteEvent = "rbxassetid://4229806545",
     RemoteEvent = "rbxassetid://4229806545",
     RemoteFunction = "rbxassetid://4229810474",
     BindableEvent = "rbxassetid://4229809371",
