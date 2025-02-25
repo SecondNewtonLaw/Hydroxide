@@ -906,7 +906,7 @@ scriptContext:SetCallback(function()
 			args = args .. ("oh%s%d, "):format(variableName, i)
 		end
 
-		setClipboard(script .. "\n" .. remotePath .. ":" .. w .. "(" .. args:sub(1, -3) .. ")")
+		setClipboard(script .. "\n" .. remotePath .. ":" .. method .. "(" .. args:sub(1, -3) .. ")")
 	end
 
 	wait(0.25)
